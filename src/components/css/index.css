@@ -38,10 +38,30 @@
   box-shadow: 0px 0px 12px teal;
   border-radius: 8px;
   margin: 2rem 1rem;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 2rem;
   color: white;
 }
 
+.crypto_d {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4c99b1;
+  box-shadow: 0px 0px 12px teal;
+  border-radius: 8px;
+  margin: 2rem 1rem;
+  padding: 0.7rem 2rem;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.d_name {
+  margin-right: 100px;
+}
+
+.d_price {
+      margin-right: 100px;
+}
 
 .crypto:hover {
   transform: scale(1.04);
@@ -52,12 +72,6 @@
 .crypto img {
   width: 40px;
   height: auto;
-}
-
-.c_name,
-.c_price {
-  font-size: 1.25rem;
-  margin-right: 50px;
 }
 
 .special {
@@ -80,4 +94,13 @@
 .dist {
   text-align: center;
   color: white;
+}
+
+.f_p {
+  margin-right: 50px;
+}
+
+.logoImages {
+  margin-top: 50px;
+  margin-right: 400px;
 }
