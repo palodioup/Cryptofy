@@ -1,8 +1,9 @@
-import "./css/index.css";
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import coinGecko from "../assets/download.jpg"
-import dotCampus from "../assets/images.png"
+import { Link } from "react-router-dom"
+import Navbar from "./Navbar.jsx";
+import coinGecko from "../assets/download.jpg";
+import dotCampus from "../assets/images.png";
 
 const Cyrptocurrency = () => {
   const [crypto, setCrypto] = useState([]);
@@ -93,43 +94,46 @@ const Cyrptocurrency = () => {
       </div>
     );
 
-  return <>
-    <div className="parent">
-      <div className="title">
-        <h1>Get the top 50 cryptocurrencies here</h1>
-        <h1 className="special">Live</h1>
-      </div>
-
-      <div>
-        <div className="crypto_d">
-          <p className="d_name">Name</p>
-          <p className="d_price">Price</p>
-          <p className="d_MarketCap">Market Cap</p>
+  return (
+    <>
+    <Navbar/>
+      <div className="parent">
+        <div className="title">
+          <h1>Get the top 50 cryptocurrencies here</h1>
+          <h1 className="special">Live</h1>
         </div>
-        {crypto.map((coin) => (
-          <>
-            <li key={coin.id} className="crypto">
-              <img src={coin.image} className="c_img" />
-              <p className="c_name">{coin.name}</p>
-              <p className="c_price">${coin.current_price}</p>
-              <p>{coin.market_cap}</p>
-            </li>
-          </>
-        ))}
+
+        <div>
+          <div className="crypto_d">
+            <p className="d_name">Name</p>
+            <p className="d_price">Price</p>
+            <p className="d_MarketCap">Market Cap</p>
+          </div>
+          {crypto.map((coin) => (
+            <>
+              <li key={coin.id} className="crypto">
+                <img src={coin.image} className="c_img" />
+                <p className="c_name">{coin.name}</p>
+                <p className="c_price">${coin.current_price}</p>
+                <p>{coin.market_cap}</p>
+              </li>
+            </>
+          ))}
+        </div>
+        <div className="dist">
+          <h1>Guess where we got our data from</h1>
+          <h3>It's - Coingecko!!!</h3>
+          <h3>Vist coingecko now!!!</h3>
+        </div>
+        <Marquee>
+          <span>
+            <img src={coinGecko} alt="coinGecko" className="logoImages" />
+            <img src={dotCampus} alt="dotCampus" className="logoImages" />
+          </span>
+        </Marquee>
       </div>
-      <div className="dist">
-        <h1>Guess where we got our data from</h1>
-        <h3>It's - Coingecko!!!</h3>
-        <h3>Vist coingecko now!!!</h3>
-      </div>
-      <Marquee>
-        <span>
-          <img src={coinGecko} alt="coinGecko" className="logoImages"/>
-          <img src={dotCampus} alt="dotCampus" className="logoImages"/>
-        </span>
-      </Marquee>
-    </div>
-  </>;
+    </>
+  );
 };
 
 export default Cyrptocurrency;
