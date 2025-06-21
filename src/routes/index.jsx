@@ -100,7 +100,7 @@ const Cyrptocurrency = () => {
     <Navbar/>
       <div className="parent">
         <div className="title">
-          <h1>Get the top 50 cryptocurrencies here</h1>
+          <h1>Get the top 50 crypto here</h1>
           <h1 className="special">Live</h1>
         </div>
 
@@ -108,7 +108,6 @@ const Cyrptocurrency = () => {
           <div className="crypto_d">
             <p className="d_name">Name</p>
             <p className="d_price">Price</p>
-            <p className="d_MarketCap">Market Cap</p>
           </div>
           {crypto.map((coin) => (
             <>
@@ -116,7 +115,6 @@ const Cyrptocurrency = () => {
                 <img src={coin.image} className="c_img" />
                 <p className="c_name">{coin.name}</p>
                 <p className="c_price">${coin.current_price}</p>
-                <p>{coin.market_cap}</p>
               </li>
             </>
           ))}
