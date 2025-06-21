@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: Poppins;
+  --f_w: 87vw;
 }
 
 .header {
@@ -159,6 +160,7 @@
      var(--d) calc(100% - var(--d))
     );
   transition: 0.5s;
+  margin-bottom: 190px;
 }
 .about_text:hover {
   transform: translate(0,0);
@@ -194,6 +196,7 @@
   cursor: pointer;
   filter: grayscale(50%);
   transition: .3s;
+  margin-bottom: 190px;
 }
 .contacts_parent:hover {
   --_p: 75%;
@@ -212,4 +215,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  background-color: #2d5e6d;
+  color: white;
+  display: flex;
+  padding: 4rem;
+  width: 90vw;
+}
+
+.fp {
+  display: block;
+  margin-right: calc(var(--f_w) / 3);
+}
+
+.fp p a {
+  text-decoration: none;
+  color: white;
+}
+
+.fpa {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }

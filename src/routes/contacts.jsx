@@ -15,6 +15,7 @@ const Contacts = () => {
         </div>
         <p>&copy; Oladipupo Nathan Akanji 2025</p>
       </div>
+      <Footer/>
     </>
   );
 };

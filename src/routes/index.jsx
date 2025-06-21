@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Navbar from "./Navbar.jsx";
 import coinGecko from "../assets/download.jpg";
 import dotCampus from "../assets/images.png";
+import Footer from "./footer.jsx";
 
 const Cyrptocurrency = () => {
   const [crypto, setCrypto] = useState([]);
@@ -132,6 +133,7 @@ const Cyrptocurrency = () => {
           </span>
         </Marquee>
       </div>
+      <Footer/>
     </>
   );
 };
