@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import download from "../assets/download.png";
+import Footer from "./footer"
 
 const Contacts = () => {
   return (
