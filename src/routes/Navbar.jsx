@@ -10,12 +10,12 @@ const Navbar = () => {
   return (
     <header className="header">
       <nav className="headerTitle">
-        <h1>Cryptofy</h1>
+        <h1 className="ewo">Cryptofy</h1>
         <div className="fadiv">
          {mobileState && menu ? <FaTimes onClick={() => {
-            setMenu(false)
+            setMenu(true)
             setMobileState(false)
-         }}/> : <FaBars onClick={() => {
+         }}/> : <FaBars className="f" onClick={() => {
             setMenu(true)
             setMobileState(true)
          }}/>}

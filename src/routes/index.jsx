@@ -18,10 +18,11 @@ const Cyrptocurrency = () => {
       .then((data) => {
         setCrypto(data);
         setLoading(false);
+        console.log("Loaded data")
       })
       .catch((err) => {
         console.error(err);
-        alert("Error fetching data: Please check your internet connection");
+        alert("Error fetching data, Please check your internet connection");
         setLoading(false);
       });
   }, []);
@@ -37,7 +38,7 @@ const Cyrptocurrency = () => {
           <rect
             fill="teal"
             stroke="teal"
-            stroke-width="23"
+            strokeWidth="23"
             width="30"
             height="30"
             x="400"
@@ -56,7 +57,7 @@ const Cyrptocurrency = () => {
           <rect
             fill="#4c99b1"
             stroke="#4c99b1"
-            stroke-width="23"
+            strokeWidth="23"
             width="30"
             height="30"
             x="475"
@@ -75,7 +76,7 @@ const Cyrptocurrency = () => {
           <rect
             fill="teal"
             stroke="teal"
-            stroke-width="23"
+            strokeWidth="23"
             width="30"
             height="30"
             x="550"
@@ -104,19 +105,25 @@ const Cyrptocurrency = () => {
           <h1 className="special">Live</h1>
         </div>
 
-        <div>
-          <div className="crypto_d">
+        <div className="b">
+          <div className="crypto">
+            <p className="hash">#</p>
+            <p className="Tit">Coin</p>
             <p className="d_name">Name</p>
             <p className="d_price">Price</p>
           </div>
           {crypto.map((coin) => (
-            <>
-              <li key={coin.id} className="crypto">
+            <div key={coin.id}>
+              <div className="crypto">
+                <p>{coin.market_cap_rank}</p>
                 <img src={coin.image} className="c_img" />
                 <p className="c_name">{coin.name}</p>
-                <p className="c_price">${coin.current_price}</p>
-              </li>
-            </>
+                <p className="c_price">${coin.current_price.toLocaleString('en-US', {
+                  minimumFractionDigits: 1,
+                  maximumFractionDigits: 1
+}               )}</p>
+              </div>
+            </div>
           ))}
         </div>
         <div className="dist">
@@ -131,7 +138,32 @@ const Cyrptocurrency = () => {
           </span>
         </Marquee>
       </div>
-      <Footer/>
+      <footer>
+            <div className="fp">
+              <p>
+                <a href="./home">Home</a>
+              </p>
+              <p>
+                <a href="./about">About</a>
+              </p>
+              <p>
+                <a href="./contacts">Contacts</a>
+              </p>
+            </div>
+            <div className="fp">
+              <p>Help</p>
+              <p>Socials</p>
+              <p>
+                &copy; {new Date().getDate()}/{new Date().getMonth() + 1}/
+                {new Date().getFullYear()}
+              </p>
+            </div>
+            {/* <div className="fpa">
+              <FaInstagramSquare />
+              <FaFacebook />
+              <FaTiktok />
+            </div> */}
+          </footer>
     </>
   );
 };
