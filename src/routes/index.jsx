@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import coinGecko from "../assets/download.jpg";
 import dotCampus from "../assets/images.png";
 import Footer from "./footer.jsx";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 
 const Cyrptocurrency = () => {
   const [crypto, setCrypto] = useState([]);
@@ -18,7 +21,7 @@ const Cyrptocurrency = () => {
       .then((data) => {
         setCrypto(data);
         setLoading(false);
-        console.log("Loaded data")
+        console.log("Loaded data");
       })
       .catch((err) => {
         console.error(err);
@@ -36,8 +39,8 @@ const Cyrptocurrency = () => {
           className="animation"
         >
           <rect
-            fill="teal"
-            stroke="teal"
+            fill="#081c2e"
+            stroke="#081c2e"
             strokeWidth="23"
             width="30"
             height="30"
@@ -55,8 +58,8 @@ const Cyrptocurrency = () => {
             ></animate>
           </rect>
           <rect
-            fill="#4c99b1"
-            stroke="#4c99b1"
+            fill="#081c2e"
+            stroke="#081c2e"
             strokeWidth="23"
             width="30"
             height="30"
@@ -74,8 +77,8 @@ const Cyrptocurrency = () => {
             ></animate>
           </rect>
           <rect
-            fill="teal"
-            stroke="teal"
+            fill="#081c2e"
+            stroke="#081c2e"
             strokeWidth="23"
             width="30"
             height="30"
@@ -98,33 +101,32 @@ const Cyrptocurrency = () => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="parent">
         <div className="title">
           <h1>Get the top 50 crypto here</h1>
           <h1 className="special">Live</h1>
         </div>
 
-        <div className="b">
-          <div className="crypto">
-            <p className="hash">#</p>
-            <p className="Tit">Coin</p>
-            <p className="d_name">Name</p>
-            <p className="d_price">Price</p>
-          </div>
-          {crypto.map((coin) => (
-            <div key={coin.id}>
-              <div className="crypto">
-                <p>{coin.market_cap_rank}</p>
-                <img src={coin.image} className="c_img" />
-                <p className="c_name">{coin.name}</p>
-                <p className="c_price">${coin.current_price.toLocaleString('en-US', {
-                  minimumFractionDigits: 1,
-                  maximumFractionDigits: 1
-}               )}</p>
-              </div>
+        <div className="bash">
+          <div className="bashtwo">
+            <div className="crypto">
+              <p className="hash">#</p>
+              <p className="Tit">Coin</p>
+              <p className="d_name">Name</p>
+              <p className="d_price">Price</p>
             </div>
-          ))}
+            {crypto.map((coin) => (
+              <div key={coin.id}>
+                <div className="crypto">
+                  <p>{coin.market_cap_rank}</p>
+                  <img src={coin.image} className="c_img" />
+                  <p className="c_name">{coin.name}</p>
+                  <p className="c_price">${coin.current_price}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="dist">
           <h1>Guess where we got our data from</h1>
@@ -138,32 +140,32 @@ const Cyrptocurrency = () => {
           </span>
         </Marquee>
       </div>
-      <footer>
-            <div className="fp">
-              <p>
-                <a href="./home">Home</a>
-              </p>
-              <p>
-                <a href="./about">About</a>
-              </p>
-              <p>
-                <a href="./contacts">Contacts</a>
-              </p>
-            </div>
-            <div className="fp">
-              <p>Help</p>
-              <p>Socials</p>
-              <p>
-                &copy; {new Date().getDate()}/{new Date().getMonth() + 1}/
-                {new Date().getFullYear()}
-              </p>
-            </div>
-            {/* <div className="fpa">
-              <FaInstagramSquare />
-              <FaFacebook />
-              <FaTiktok />
-            </div> */}
-          </footer>
+      <footer className="bh">
+        <div className="fpb">
+          <p>
+            <a href="./home">Home</a>
+          </p>
+          <p>
+            <a href="./about">About</a>
+          </p>
+          <p>
+            <a href="./contacts">Contacts</a>
+          </p>
+        </div>
+        <div className="fpb">
+          <p>Help</p>
+          <p>Socials</p>
+          <p>
+            &copy; {new Date().getDate()}/{new Date().getMonth() + 1}/
+            {new Date().getFullYear()}
+          </p>
+        </div>
+        <div className="fpaa">
+          <FaInstagramSquare />
+          <FaFacebook />
+          <FaTiktok />
+        </div>
+      </footer>
     </>
   );
 };

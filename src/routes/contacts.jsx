@@ -6,7 +6,7 @@ import ContactForm from "./form/form.jsx";
 
 const Contacts = () => {
   return (
-    <div className="kjan">
+    <div className="kjana">
       <Navbar />
       <div className="contacts_parent">
         <div className="s">

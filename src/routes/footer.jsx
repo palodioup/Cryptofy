@@ -5,7 +5,7 @@ import { FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="ba">
       <div className="fp">
         <p>
           <a href="./home">Home</a>
